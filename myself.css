@@ -1,107 +1,184 @@
-1
+/* myself.css
+   Centralized, colorful, responsive stylesheet for the project.
+   - Centers page content with 25% margins on both sides (content width = 50%).
+   - Headings styled in blue, red, yellow with accessible sizes.
+   - Navbar2 is fixed near the bottom (25% from bottom) and presents each working link as a button.
+   - Optimized and consistent utility classes for reuse across many HTML pages.
+*/
 
-* {
-
-2
-
-    margin: 0px;
-
-3
-
-    padding: 0px;
-
-4
-
+/* ---------- Variables ---------- */
+:root{
+  --bg-gradient-1: linear-gradient(135deg,#f8fafc 0%,#e6eefc 100%);
+  --card-bg: #ffffffcc;
+  --accent-blue: #1e40af;
+  --accent-red:  #ef4444;
+  --accent-yellow:#facc15;
+  --accent-purple:#7c3aed;
+  --text-color: #1f2937;
+  --muted: #6b7280;
+  --btn-shadow: 0 6px 18px rgba(31,41,55,0.08);
+  --rounded: 10px;
+  --max-content-width: 50vw; /* keeps 25% margins both sides on wide screens */
+  --mobile-side-gap: 4vw;
 }
 
-5
-
-body {
-
-6
-
-      background: url('../images/body system.jpg') #FFFF00;
-
-7
-
-      color: #000;
-
-8
-
-      font-family: Arial, sans-serif;
-
-9
-
-    }
-
-10
-
-    #navbar, #navbar2 {
-
-11
-
-      margin-bottom: 20px;
-
-12
-
-    }
-
-13
-
-h1 {
-
-14
-
-    font-size: 36px;
-
-15
-
-    font-family: "Times New Roman", Times, serif;
-
-16
-
-    color: #FF3;
-
-17
-
+/* ---------- Reset & Box Sizing ---------- */
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0 auto;
+  background: var(--bg-gradient-1);
+  color: var(--text-color);
+  font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  line-height:1.55;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  /* center content with 25% margins on left & right for wide screens */
+  max-width: var(--max-content-width);
+  padding-left: 0;
+  padding-right: 0;
+  text-align: center; /* center inline text as requested */
 }
 
-18
+/* Fallback for narrow screens: use side gaps instead of fixed margins */
+@media (max-width:900px){
+  :root{ --max-content-width: calc(100% - (var(--mobile-side-gap) * 2)); }
+  body{ padding-left: var(--mobile-side-gap); padding-right: var(--mobile-side-gap); text-align:left; }
+}
 
-  var MenuBar1 = new Spry.Widget.MenuBar("MenuBar1", {
+/* ---------- Headings (blue, red, yellow) ---------- */
+h1,h2,h3{
+  margin:0.8rem 0 0.4rem;
+  font-weight:700;
+  letter-spacing:0.2px;
+}
 
-19
+/* preference: H1 = blue, H2 = red, H3 = yellow (as requested) */
+h1{ color: var(--accent-blue); font-size: clamp(1.6rem, 3.2vw, 2.8rem); text-shadow: 0 4px 18px rgba(30,64,175,0.08) }
+h2{ color: var(--accent-red);  font-size: clamp(1.3rem, 2.4vw, 2.0rem); text-shadow: 0 4px 14px rgba(239,68,68,0.06) }
+h3{ color: var(--accent-yellow); font-size: clamp(1.05rem, 1.8vw, 1.4rem); text-shadow: 0 3px 10px rgba(250,204,21,0.06) }
 
-      imgDown: "SpryAssets/SpryMenuBarDownHover.gif",
+/* ---------- Typography ---------- */
+p, li, a, span, label {
+  font-size: clamp(0.95rem, 1.3vw, 1.1rem);
+  color: var(--text-color);
+}
+a{ color: var(--accent-purple); text-decoration: none; transition: color .18s ease;}
+a:hover, a:focus{ color: var(--accent-blue); text-decoration: underline; outline: none; }
 
-20
+/* ---------- Content card / sections ---------- */
+section, .card {
+  background: var(--card-bg);
+  border-radius: var(--rounded);
+  padding: 1.2rem 1rem;
+  margin: 1rem 0;
+  box-shadow: var(--btn-shadow);
+  overflow: hidden;
+  text-align: left;
+}
 
-      imgRight: "SpryAssets/SpryMenuBarRightHover.gif"
+/* central content wrapper if needed inside body */
+.container {
+  margin: 1.2rem auto;
+  width: 100%;
+  max-width: 100%;
+  padding: 0 0.25rem;
+}
 
-21
+/* ---------- Buttons (used for navbar2 links & generic actions) ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .5rem;
+  padding: 0.6rem 0.9rem;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  font-weight: 700;
+  color: #fff;
+  box-shadow: var(--btn-shadow);
+  transition: transform .12s ease, box-shadow .12s ease, opacity .12s ease;
+  text-decoration: none;
+  white-space: nowrap;
+  user-select: none;
+}
 
-    });
+/* color variants for buttons */
+.btn--blue{ background: linear-gradient(90deg,var(--accent-blue), #3b82f6); }
+.btn--red { background: linear-gradient(90deg,var(--accent-red), #fb7185); }
+.btn--gold{ background: linear-gradient(90deg,var(--accent-yellow), #f59e0b); color: #111; }
+.btn--purple{ background: linear-gradient(90deg,var(--accent-purple), #a78bfa); }
 
-22
+.btn:hover{ transform: translateY(-3px); box-shadow: 0 12px 28px rgba(0,0,0,0.10) }
+.btn:active{ transform: translateY(-1px) }
 
-body {
+/* small / large variants */
+.btn--sm{ padding: .4rem .65rem; font-size:.95rem; }
+.btn--lg{ padding: .8rem 1.1rem; font-size:1.05rem; }
 
-23
+/* ---------- Navbar2 (bottom fixed control zone) ---------- */
+/* The navbar2 sits fixed, 25% from the bottom of viewport, and occupies the centered column.
+   Each link is rendered as a colored pill button. Removed links (mysql datab, atlas, MY TOMCAT)
+   should not appear in the HTML using this template. */
+#navbar2{
+  position: fixed;
+  left: 25%;
+  right: 25%;
+  bottom: 25%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: .6rem;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  padding: .6rem;
+  background: rgba(255,255,255,0.85);
+  border-radius: 14px;
+  box-shadow: 0 12px 36px rgba(16,24,40,0.12);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  text-align:center;
+}
 
-    background-color: #A096FE;
+/* On narrow screens, convert navbar2 to a dock at bottom and full width */
+@media (max-width:900px){
+  #navbar2{
+    left: var(--mobile-side-gap);
+    right: var(--mobile-side-gap);
+    bottom: 3vh; /* a small gap above mobile bottom controls */
+    padding: .6rem;
+    justify-content: space-between;
+    gap: .5rem;
+  }
+  #navbar2 .btn{ flex: 1 1 auto; min-width: 0; }
+}
 
-24
+/* a11y focus style */
+.btn:focus{ outline: 3px solid rgba(99,102,241,0.18); outline-offset: 2px }
 
-    font-size: 16px;
+/* ---------- Helpers & utilities ---------- */
+.center { text-align:center }
+.mt-2 { margin-top: 0.9rem }
+.mb-2 { margin-bottom: 0.9rem }
+.hidden { display:none !important }
+.kv { font-weight:700; color:var(--muted) }
 
-25
+/* ---------- Table styles kept for project pages ---------- */
+table{ width:100%; border-collapse:collapse; background:transparent }
+th,td{ padding:.6rem; border-bottom:1px solid #f3f4f6; text-align:left }
 
-    margin-top: 0px;
+/* ---------- Small print footer inside center column ---------- */
+.small{
+  font-size:.9rem;
+  color:var(--muted);
+  margin-top: .6rem;
+}
 
-26
+/* ---------- Guidance classes for maintainers ---------- */
+/* .keep-button -> apply to anchor elements that are verified working.
+   .remove-button -> apply to links that should be removed (template has them removed already) */
+.keep-button{ display:inline-block }
+.remove-button{ display:none !important }
 
-    margin-right: auto;
-
-27
-
-    margin-bottom: 0px;
+/* End of myself.css */
