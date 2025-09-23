@@ -1,0 +1,107 @@
+1
+
+* {
+
+2
+
+    margin: 0px;
+
+3
+
+    padding: 0px;
+
+4
+
+}
+
+5
+
+body {
+
+6
+
+      background: url('../images/body system.jpg') #FFFF00;
+
+7
+
+      color: #000;
+
+8
+
+      font-family: Arial, sans-serif;
+
+9
+
+    }
+
+10
+
+    #navbar, #navbar2 {
+
+11
+
+      margin-bottom: 20px;
+
+12
+
+    }
+
+13
+
+h1 {
+
+14
+
+    font-size: 36px;
+
+15
+
+    font-family: "Times New Roman", Times, serif;
+
+16
+
+    color: #FF3;
+
+17
+
+}
+
+18
+
+  var MenuBar1 = new Spry.Widget.MenuBar("MenuBar1", {
+
+19
+
+      imgDown: "SpryAssets/SpryMenuBarDownHover.gif",
+
+20
+
+      imgRight: "SpryAssets/SpryMenuBarRightHover.gif"
+
+21
+
+    });
+
+22
+
+body {
+
+23
+
+    background-color: #A096FE;
+
+24
+
+    font-size: 16px;
+
+25
+
+    margin-top: 0px;
+
+26
+
+    margin-right: auto;
+
+27
+
+    margin-bottom: 0px;
