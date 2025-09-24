@@ -1,169 +1,317 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Untitled Document</title>
-<link href="../../../SELF/self.css" rel="stylesheet" type="text/css" />
+  <meta charset="UTF-8" />
+  <title>Recruitment Process / Searching Job</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #181c24;
+      color: #f6f6f6;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .container {
+      margin: 40px 0;
+      width: 100%;
+      max-width: 900px;
+      background: rgba(30, 34, 44, 0.98);
+      border-radius: 18px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.32);
+      padding: 32px 25px;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    h1, h2, h3 {
+      text-align: center;
+      margin-top: 0;
+      margin-bottom: 16px;
+    }
+    .main-table {
+      margin: 32px auto 24px auto;
+      border-collapse: separate;
+      border-spacing: 0 10px;
+      background: #222736;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.13);
+      width: 100%;
+      max-width: 850px;
+    }
+    .main-table th, .main-table td {
+      padding: 18px 16px;
+      text-align: center;
+      border: none;
+      color: #f6f6f6;
+    }
+    .main-table th {
+      background: #232946;
+      font-size: 1.12em;
+    }
+    .main-table tr:nth-child(even) {
+      background: #232946;
+    }
+    .main-table tr:nth-child(odd) {
+      background: #222736;
+    }
+    .section-title {
+      margin-top: 32px;
+      font-size: 1.45em;
+      font-weight: bold;
+      color: #fff;
+      text-shadow: 0 2px 12px #0008;
+    }
+    .info-block {
+      margin: 16px 0;
+      text-align: center;
+      font-size: 1.13em;
+      line-height: 1.6;
+    }
+    .sites-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 24px;
+    }
+    .sites-table th, .sites-table td {
+      border: 1px solid #3d4252;
+      padding: 10px 6px;
+      text-align: center;
+      font-size: 1em;
+    }
+    .sites-table th {
+      background: #232946;
+    }
+    .category-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 18px;
+      margin: 20px 0 20px 0;
+    }
+    .category-card {
+      background: #2d3142;
+      border-radius: 8px;
+      box-shadow: 0 1px 6px #0005;
+      padding: 18px 14px;
+      min-width: 150px;
+      max-width: 190px;
+      flex: 1 1 170px;
+      margin: 0 6px;
+    }
+    .category-card h2 {
+      font-size: 1.07em;
+      margin-bottom: 10px;
+      color: #ffe156;
+    }
+    a, a:visited {
+      color: #7ee787;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    a:hover {
+      color: #37a1ff;
+      text-decoration: underline;
+    }
+    .stats-table {
+      margin: 20px auto 10px auto;
+      background: #272c39;
+      border-radius: 8px;
+      overflow: hidden;
+      width: 100%;
+      max-width: 440px;
+    }
+    .stats-table th, .stats-table td {
+      padding: 12px 10px;
+      border: none;
+      color: #f6f6f6;
+    }
+    .stats-table th {
+      background: #353a4a;
+      font-size: 1em;
+    }
+    .stats-table tr:nth-child(even) {
+      background: #2d3142;
+    }
+    .stats-table tr:nth-child(odd) {
+      background: #272c39;
+    }
+    .links-footer {
+      width: 100%;
+      max-width: 900px;
+      margin: 30px auto 10px auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .footer-links-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 24px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    .footer-links-list li {
+      margin: 0 0 8px 0;
+      font-size: 1.05em;
+      background: #232946;
+      border-radius: 6px;
+      padding: 10px 18px;
+      transition: background 0.2s;
+    }
+    .footer-links-list li:hover {
+      background: #353a4a;
+    }
+
+    @media (max-width: 700px) {
+      .container {
+        padding: 18px 5vw;
+        min-width: unset;
+        max-width: 100vw;
+      }
+      .main-table, .stats-table {
+        min-width: unset;
+        max-width: 100vw;
+        font-size: 0.97em;
+      }
+      .category-row {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+      }
+    }
+  </style>
 </head>
 <body>
-<h1> Recruitment process / SEARCHING JOB</h1>
-<div></div>
-<table width="200" border="10" cellspacing="10" cellpadding="10">
-<tr>
-    <th scope="col"><div id="navbar" align="right">
-<ul>
-	<li><a href="#">categories</a>
-<ul>
-<li><a href="differernt job roles/java.html">java</a></li>
-<li><a href="differernt job roles/php.html">web</a></li>
-<li><a href="differernt job roles/digital marketing.html">digital marketing</a></li>
-<li><a href="differernt job roles/graphics.html">graphics desiner</a></li>
+  <div class="container">
+    <h1>Recruitment Process / Searching Job</h1>
+    <div class="info-block">
+      <h3>Get job information online using <strong>Email ID</strong> subscriptions or other methods:<br>
+      <span style="color:#ffe156;">Direct to your inbox or via skill upgrades</span>
+      </h3>
+    </div>
 
-</ul>
-</ul>
-</div></th>
-  </tr>
-  <tr>
-    <th scope="col"><div align="LEFT"><table width="200" border="1" cellspacing="2" cellpadding="2">
-    <tr>
-      <td   id="fontsize"colspan="5"><blockquote>
-        <h3>Getting the information about jobs on line using <strong>email id</strong> subscriptions</h3>
-        </blockquote>
-      <p>&nbsp;</p></td>
-    </tr>
-    <tr>
-      <td height="349" colspan="3"><h1>Getting information <span color="red" >directly</span> about jobs into id.</h1></td>
-      <td colspan="2"><h1><strong><em>Getting information,</em></strong></h1>
-        <h1><em><strong>through other</strong></em></h1>
-        <h1><em><strong>methods  ,learning to upgrade skills</strong></em><strong></strong></h1>
-      <p>&nbsp;</p></td>
-    </tr>
-    <tr>
-      <td height="282">
-  <table width="114" border="1">
-    <tr>
-      <th width="104" scope="col">website</th>
-      </tr>
-    <tr>
-      <td></td>
-      </tr>
-    <tr>
-      <td><a href="https://www.shine.com/" target="_new">shine.com</a></td>
-      </tr>
-    <tr>
-      <td><a href="https://www.careerbuilder.com/" target="_new">carrierbuilder.com</a></td>
-      </tr>
-    <tr>
-      <td><a href="https://www.monster.com/" target="_new">monster.com</a></td>
-      </tr>
-    <tr>
-      <td><a href="https://www.indeed.co.in" target="_new">indeed.com</a></td>
-      </tr>
-    <tr>
-      <td><a href="https://www.timesjobs.com/" target="_new">timesjobs.com</a></td>
-      </tr>
-    <tr>
-      <td><a href="https://www.naukri.com/mnjuser/inbox" target="_new">nuakri.com</a></td>
-      </tr>
-    <tr>
-      <td>&nbsp;</td>
-      </tr>
-    <tr>
-      <td>&nbsp;</td>
-      </tr>
-    <tr>
-      <td>&nbsp;</td>
-      </tr>
-    <tr>
-      <td>&nbsp;</td>
-      </tr>
-  </table>></td>
-      <td><h2>govt jobs</h2>
-        <p>IndianGovrnmentjob.com</p>
-      <p>employementnews.com</p></td>
-      <td><h2>WFH</h2>
-        <p>freelancer.com</p>
-        <p>upwork.com</p>
-      <p>workanna.com</p></td>
-      <td><h2>social networing</h2>
-        <p><a href="https://in.linkedin.com/" target="_new">linkedIn</a></p>
-        <p><a href="https://twitter.com/" target="_new">twitter</a></p>
-      <p><a href="https://www.facebook.com/" target="_new">facebook</a></p></td>
-      <td><h2>mooc websites</h2>
-        <p>coursera</p>
-        <p>edx.com</p>
-        <p>udacity</p>
-      <p>khanacademy</p></td>
-    </tr>
-  </table></div>&nbsp;</th>
-  </tr>
-  <tr>
-    <td><div align="right">
-  <ol>
-    <p><a href="../my resume/Shaik Shaffi_2018-4.html">my latest updated curriculam vitae</a></p>
-    <p>Cover Letter</p>
-  </ol>
-  <ol>Written Test</ol>
-  <ol>
-    <p>Personal Interview</p>
-    <p>APPLY ONLINE</p>
-    <p>PAY FEE ONLINE</p>
-    <div align="right">
-    <table width="200" border="1" cellspacing="2" cellpadding="2">
+    <table class="main-table">
       <tr>
-        <th scope="col">SEARCH </th>
-        <th scope="col">IN NUMBERS</th>
+        <th colspan="5">
+          <span class="section-title">Job Information Sources</span>
+        </th>
       </tr>
       <tr>
-        <th scope="row">VIEWED MAILS</th>
+        <td colspan="5" class="info-block" style="padding:12px 5px;">
+          Getting information <span style="color:#ff686b;">directly</span> about jobs into your inbox, or through other methods and learning to upgrade skills.
+        </td>
+      </tr>
+      <tr>
+        <!-- Job site categories as "cards" in a row -->
+        <td colspan="5">
+          <div class="category-row">
+            <div class="category-card">
+              <h2>Private Job Portals</h2>
+              <ul style="margin:0; padding:0 0 0 18px; text-align:left;">
+                <li><a href="https://www.shine.com/" target="_blank">shine.com</a></li>
+                <li><a href="https://www.careerbuilder.com/" target="_blank">careerbuilder.com</a></li>
+                <li><a href="https://www.monster.com/" target="_blank">monster.com</a></li>
+                <li><a href="https://www.indeed.co.in" target="_blank">indeed.com</a></li>
+                <li><a href="https://www.timesjobs.com/" target="_blank">timesjobs.com</a></li>
+                <li><a href="https://www.naukri.com/mnjuser/inbox" target="_blank">naukri.com</a></li>
+              </ul>
+            </div>
+            <div class="category-card">
+              <h2>Govt Jobs</h2>
+              <ul style="margin:0; padding:0 0 0 18px; text-align:left;">
+                <li><a href="https://www.indiangovernmentjobs.com/" target="_blank">IndianGovernmentJobs.com</a></li>
+                <li><a href="https://www.employmentnews.gov.in/" target="_blank">employmentnews.gov.in</a></li>
+              </ul>
+            </div>
+            <div class="category-card">
+              <h2>Work From Home</h2>
+              <ul style="margin:0; padding:0 0 0 18px; text-align:left;">
+                <li><a href="https://www.freelancer.com/" target="_blank">freelancer.com</a></li>
+                <li><a href="https://www.upwork.com/" target="_blank">upwork.com</a></li>
+                <li><a href="https://www.workana.com/" target="_blank">workana.com</a></li>
+              </ul>
+            </div>
+            <div class="category-card">
+              <h2>Social Networking</h2>
+              <ul style="margin:0; padding:0 0 0 18px; text-align:left;">
+                <li><a href="https://in.linkedin.com/" target="_blank">LinkedIn</a></li>
+                <li><a href="https://twitter.com/" target="_blank">Twitter</a></li>
+                <li><a href="https://www.facebook.com/" target="_blank">Facebook</a></li>
+              </ul>
+            </div>
+            <div class="category-card">
+              <h2>MOOC / Learning</h2>
+              <ul style="margin:0; padding:0 0 0 18px; text-align:left;">
+                <li><a href="https://www.coursera.org/" target="_blank">Coursera</a></li>
+                <li><a href="https://www.edx.org/" target="_blank">edX</a></li>
+                <li><a href="https://www.udacity.com/" target="_blank">Udacity</a></li>
+                <li><a href="https://www.khanacademy.org/" target="_blank">Khan Academy</a></li>
+              </ul>
+            </div>
+          </div>
+        </td>
+      </tr>
+    </table>
+
+    <div class="info-block">
+      <strong>Application Steps:</strong><br>
+      <a href="../my resume/Shaik Shaffi_2018-4.html" target="_blank">Latest Updated Curriculum Vitae</a> | Cover Letter | Written Test | Personal Interview | Apply Online | Pay Fee Online
+    </div>
+
+    <table class="stats-table">
+      <tr>
+        <th>SEARCH</th>
+        <th>IN NUMBERS</th>
+      </tr>
+      <tr>
+        <td>VIEWED MAILS</td>
         <td>1000+</td>
       </tr>
       <tr>
-        <th scope="row">SUITABLE OPPURTUNITY</th>
+        <td>SUITABLE OPPORTUNITIES</td>
         <td>50+</td>
       </tr>
       <tr>
-        <th scope="row">TO APPLY</th>
+        <td>TO APPLY</td>
         <td>50+</td>
       </tr>
       <tr>
-        <th scope="row">CALL FROM COMPANY</th>
+        <td>CALL FROM COMPANY</td>
         <td>1</td>
       </tr>
-      </table>
-    
-    <table width="200" border="5" cellspacing="2" cellpadding="2">
+    </table>
+
+    <table class="stats-table">
       <tr>
-        <th scope="col">website</th>
-        <th scope="col">no. of recruiters viewed you resume </th>
-        <th scope="col">no. of recruiter contacted you</th>
+        <th>Website</th>
+        <th>No. of recruiters viewed your resume</th>
+        <th>No. of recruiters contacted you</th>
       </tr>
       <tr>
-        <th scope="col">&nbsp;</th>
-        <th scope="col">&nbsp;</th>
-        <th scope="col">&nbsp;</th>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
       </tr>
     </table>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-  </ol>
-</div>&nbsp;</td>
-  </tr>
-</table>
+  </div>
 
-
-
-
-
-
-<div align="center" id="navbar2" >
-  <UL>
-<LI><a href="../../../Time management/Time.html">TIME</a></LI>
-<LI><a href="../../../maps/maps.html">PLACE</a></LI>
-<LI><a href="../../../financial/financial.html">FINANCIAL </a></LI>
-<LI><a href="../network/networking.html">social Networking </a></LI>
-<LI><a href="../ONLINE COURSES/OnlineCourses.html"> courses </a></LI>
-</UL>
-</div>
+  <footer class="links-footer">
+    <ul class="footer-links-list">
+      <li><a href="../../../Time management/Time.html" target="_blank">TIME</a></li>
+      <li><a href="../../../maps/maps.html" target="_blank">PLACE</a></li>
+      <li><a href="../../../financial/financial.html" target="_blank">FINANCIAL</a></li>
+      <li><a href="../network/networking.html" target="_blank">Social Networking</a></li>
+      <li><a href="../ONLINE COURSES/OnlineCourses.html" target="_blank">Courses</a></li>
+      <!-- Add more links here as needed -->
+    </ul>
+  </footer>
 </body>
 </html>
