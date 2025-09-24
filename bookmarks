@@ -7,6 +7,7 @@ DO NOT EDIT! -->
 <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
 <TITLE>Bookmarks</TITLE>
 <H1>Bookmarks</H1>
+<body>
 <DL><p>
     <DT><H3 ADD_DATE="0" LAST_MODIFIED="1746342071">Bookmark Bar</H3>
     <DL><p>
@@ -365,5 +366,5 @@ DO NOT EDIT! -->
             <DT><A HREF="https://azure.microsoft.com/en-us/free/students?icid=portal" ADD_DATE="1754047011" LAST_MODIFIED="1754047013" ICON_URI="https://azure.microsoft.com/favicon.ico?v2">Azure for Students – Free Account Credit | Microsoft Azure</A>
         </DL><p>
     </DL><p>
-</DL><p>
+</DL><p></body>
 </head>
