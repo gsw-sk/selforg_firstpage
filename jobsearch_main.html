@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Job Search Portal - All In One</title>
+    <link rel="stylesheet" href="myself.css">
+    <style>
+        body {
+            background: #f6f8fa;
+            margin: 0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+        }
+        .container {
+            width: 50vw;
+            min-width: 320px;
+            max-width: 900px;
+            margin: 40px auto 0 auto;
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 4px 18px rgba(0,0,0,0.08);
+            padding: 32px 24px;
+        }
+        .tabs {
+            display: flex;
+            justify-content: center;
+            gap: 36px;
+            margin-bottom: 32px;
+        }
+        .tab {
+            padding: 12px 32px;
+            background: #e7eaf3;
+            border-radius: 8px 8px 0 0;
+            cursor: pointer;
+            font-size: 1.15em;
+            font-weight: 500;
+            transition: background 0.2s;
+        }
+        .tab.active {
+            background: #2979ff;
+            color: #fff;
+        }
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.35s;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px);}
+            to { opacity: 1; transform: translateY(0);}
+        }
+        h1, h2, h3 {
+            text-align: center;
+            margin-top: 0;
+            margin-bottom: 18px;
+            color: #2979ff;
+        }
+        table {
+            border-collapse: collapse;
+            margin: 16px 0;
+            width: 100%;
+        }
+        th, td {
+            text-align: center;
+            padding: 8px 6px;
+            border-bottom: 1px solid #e0e2e7;
+        }
+        th {
+            background: #f2f5fa;
+            color: #2979ff;
+        }
+        tr:last-child td {
+            border-bottom: none;
+        }
+        .bookmark-list {
+            list-style: none;
+            padding: 0;
+            margin: 24px 0;
+        }
+        .bookmark-list li {
+            background: #e7eaf3;
+            margin: 10px 0;
+            border-radius: 7px;
+            padding: 12px;
+            text-align: center;
+            font-size: 1.08em;
+        }
+        .freelance-card {
+            background: #f6f8fa;
+            border-radius: 8px;
+            padding: 18px 20px;
+            margin: 18px auto;
+            box-shadow: 0 2px 6px rgba(41,121,255,0.05);
+            max-width: 480px;
+            text-align: center;
+        }
+        /* Extra styling for jobsearch + private jobs merged content */
+        .jobsearch-section {
+            margin-bottom: 18px;
+        }
+        .privatejobs-section {
+            margin-bottom: 18px;
+        }
+        /* Styling for bookmarks html import */
+        .bookmarks-html {
+            background: #f6f8fa;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            overflow-x: auto;
+        }
+        /* Responsive */
+        @media (max-width: 900px) {
+            .container {
+                width: 90vw;
+                min-width: unset;
+                padding: 20px 7px;
+            }
+            table { font-size: 0.97em;}
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="tabs">
+            <div class="tab active" onclick="showTab('jobsearch')">Job Search</div>
+            <div class="tab" onclick="showTab('privatejobs')">Private Jobs</div>
+            <div class="tab" onclick="showTab('freelance')">Freelance Page</div>
+            <div class="tab" onclick="showTab('bookmarks')">Bookmarks</div>
+        </div>
+
+        <!-- Job Search Tab -->
+        <div class="tab-content active" id="jobsearch">
+            <div class="jobsearch-section">
+                <h2>Job Search</h2>
+                <!-- Content from jobsearch.html and merged with privatejobs.html if required -->
+                <table border="10" align="center">
+                    <tr>
+                      <th scope="col">
+                        <h3>AIM: TO ACHIEVE A JOB/WORK OPPORTUNITY WHICH IS PERMANENT, RELEVANT TO COMPUTERS...</h3>
+                        <h3 style="color:BROWN">IT IS MY PERSONAL COMMITMENT THAT "I WILL PROVIDE PROTECTION AND MAINTENANCE..."</h3>
+                        <pre>COURAGE,STRENGTH,PATIENCE,RIGHT KNOWLEDGE AND
+ENHANCE MY SKILLS,DISCIPLINE,CONSISTENCY,PUNCTUALITY,
+AND GIVE ME ABILITY TO RESPOND TOWARDS EARLY MORNING WAKE UP CALLS,CALL TO NAMAZ,CALL OF DUTY.</pre>
+                      </th>
+                    </tr>
+                </table>
+                <table cellpadding="2" cellspacing="2" style="margin: 18px auto;">
+                    <tr>
+                        <th style="padding: 8px; border: 1px solid #2979ff;">
+                            <p>my website</p>
+                            <a href="https://www.workana.com/" target="_blank">workana.com</a>
+                        </th>
+                        <th style="padding: 8px; border: 1px solid #2979ff;">
+                            <a href="https://www.freelancer.com/" target="_blank">freelancer.com</a>
+                        </th>
+                        <th style="padding: 8px; border: 1px solid #2979ff;">
+                            <a href="https://partner.com/" target="_blank">partner.com</a>
+                        </th>
+                    </tr>
+                </table>
+                <h3>Recruitment process / SEARCHING JOB</h3>
+                <table border="10" cellspacing="10" cellpadding="10" style="margin: 0 auto;">
+                    <tr>
+                        <th>
+                            <table border="1" cellspacing="2" cellpadding="2" style="margin: 0 auto;">
+                                <tr>
+                                    <td colspan="5">
+                                        <h3>Getting the information about jobs online using <strong>email id</strong> subscriptions</h3>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td height="349" colspan="3">
+                                        <h1>Getting information <span style="color:red">directly</span> about jobs into id.</h1>
+                                    </td>
+                                    <td colspan="2">
+                                        <h1><strong>Getting information,</strong></h1>
+                                        <h1><strong>through other</strong></h1>
+                                        <h1><strong>methods, learning to upgrade skills</strong></h1>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <table border="1">
+                                            <tr>
+                                                <th>website</th>
+                                            </tr>
+                                            <tr><td><a href="https://www.shine.com/" target="_blank">shine.com</a></td></tr>
+                                            <tr><td><a href="https://www.careerbuilder.com/" target="_blank">careerbuilder.com</a></td></tr>
+                                            <tr><td><a href="https://www.monster.com/" target="_blank">monster.com</a></td></tr>
+                                            <tr><td><a href="https://www.indeed.co.in" target="_blank">indeed.com</a></td></tr>
+                                            <tr><td><a href="https://www.timesjobs.com/" target="_blank">timesjobs.com</a></td></tr>
+                                            <tr><td><a href="https://www.naukri.com/mnjuser/inbox" target="_blank">naukri.com</a></td></tr>
+                                            <tr><td>Use keywords like <b>hiring</b>, <b>talent acquisition</b>, <b>intern</b> on LinkedIn</td></tr>
+                                            <tr><td>Use CAR (Company Alumni Recruiter and Lamp List)</td></tr>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <h2>Govt Jobs</h2>
+                                        <p>IndianGovernmentjob.com</p>
+                                        <p>employmentnews.com</p>
+                                    </td>
+                                    <td>
+                                        <h2>WFH</h2>
+                                        <p>freelancer.com</p>
+                                        <p>upwork.com</p>
+                                        <p>workana.com</p>
+                                    </td>
+                                    <td>
+                                        <h2>Social Networking</h2>
+                                        <p><a href="https://in.linkedin.com/" target="_blank">LinkedIn</a></p>
+                                        <p><a href="https://twitter.com/" target="_blank">Twitter</a></p>
+                                        <p><a href="https://www.facebook.com/" target="_blank">Facebook</a></p>
+                                    </td>
+                                    <td>
+                                        <h2>MOOC Websites</h2>
+                                        <p>Coursera</p>
+                                        <p>edX.com</p>
+                                        <p>Udacity</p>
+                                        <p>KhanAcademy</p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </th>
+                    </tr>
+                </table>
+                <div style="margin: 18px auto;">
+                    <a href="../my resume/Shaik Shaffi_2018-4.html" target="_blank">My latest updated curriculum vitae</a>
+                    <span> | Cover Letter | Written Test | Personal Interview | APPLY ONLINE | PAY FEE ONLINE</span>
+                    <table border="1" style="margin: 18px auto;">
+                        <tr><th>SEARCH</th><th>IN NUMBERS</th></tr>
+                        <tr><td>VIEWED MAILS</td><td>1000+</td></tr>
+                        <tr><td>SUITABLE OPPORTUNITY</td><td>50+</td></tr>
+                        <tr><td>TO APPLY</td><td>50+</td></tr>
+                        <tr><td>CALL FROM COMPANY</td><td>1</td></tr>
+                    </table>
+                </div>
+                <h3>Preparation for exams by Reading, Writing, Learning, Practising at city central/state central/any local library</h3>
+                <table border="5" cellpadding="10" style="margin: 0 auto;">
+                    <caption>THINGS REQUIRED BEFORE LEAVING TO WORK /INTERVIEW</caption>
+                    <tr><td>FORMAL SHIRT</td></tr>
+                    <tr><td>FORMAL PANT</td></tr>
+                    <tr><td>SHOE & SOCKS</td></tr>
+                    <tr><td>WATCH & BELT</td></tr>
+                    <tr><td>MOBILE</td></tr>
+                    <tr><td>RESUME, PEN.</td></tr>
+                </table>
+                <h3>Qualities for teacher/faculty for school</h3>
+                <table border="10" cellpadding="5" style="margin: 0 auto;">
+                    <tr><td>punctual: should not be late to school or meeting or events</td></tr>
+                    <tr><td>planning: plan your chapters to be taught, notes to be given, for next day, week, month, year</td></tr>
+                    <tr><td>dressing: wear neat, clean, ironed clothes and polished shoes</td></tr>
+                    <tr><td>language: mind your language, be polite, speak in English</td></tr>
+                    <tr><td>should encourage children to learn</td></tr>
+                    <tr><td>targets for writing notes and explanation; stop procrastination</td></tr>
+                    <tr><td>daily prayer early morning, before sleep</td></tr>
+                    <tr><td>reading newspapers / awareness of current affairs</td></tr>
+                    <tr><td>being regular: do not take a single leave in a month</td></tr>
+                    <tr><td>follow timetable strictly</td></tr>
+                    <tr><td>do your homework, preparation of notes and explanation</td></tr>
+                    <tr><td>patience and tolerance with students</td></tr>
+                    <tr><td>value for education</td></tr>
+                </table>
+            </div>
+        </div>
+
+        <!-- Private Jobs Tab -->
+        <div class="tab-content" id="privatejobs">
+            <div class="privatejobs-section">
+                <h2>Private Jobs</h2>
+                <div style="text-align:center; margin-bottom:20px;">
+                    <h3>Get job information online using <strong>Email ID</strong> subscriptions or other methods: <span style="color:#ffe156;">Direct to your inbox or via skill upgrades</span></h3>
+                </div>
+                <table class="main-table" style="margin: 0 auto;">
+                    <tr>
+                        <th colspan="5">
+                            <span class="section-title">Job Information Sources</span>
+                        </th>
+                    </tr>
+                    <tr>
+                        <td colspan="5" style="padding:12px 5px;">
+                            Getting information <span style="color:#ff686b;">directly</span> about jobs into your inbox, or through other methods and learning to upgrade skills.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="5">
+                            <div class="category-row" style="display:flex; flex-wrap:wrap; justify-content:center; gap:18px;">
+                                <div class="category-card">
+                                    <h2>Private Job Portals</h2>
+                                    <ul style="margin:0; padding:0 0 0 18px; text-align:left;">
+                                        <li><a href="https://www.shine.com/" target="_blank">shine.com</a></li>
+                                        <li><a href="https://www.careerbuilder.com/" target="_blank">careerbuilder.com</a></li>
+                                        <li><a href="https://www.monster.com/" target="_blank">monster.com</a></li>
+                                        <li><a href="https://www.indeed.co.in" target="_blank">indeed.com</a></li>
+                                        <li><a href="https://www.timesjobs.com/" target="_blank">timesjobs.com</a></li>
+                                        <li><a href="https://www.naukri.com/mnjuser/inbox" target="_blank">naukri.com</a></li>
+                                    </ul>
+                                </div>
+                                <div class="category-card">
+                                    <h2>Govt Jobs</h2>
+                                    <ul style="margin:0; padding:0 0 0 18px; text-align:left;">
+                                        <li><a href="https://www.indiangovernmentjobs.com/" target="_blank">IndianGovernmentJobs.com</a></li>
+                                        <li><a href="https://www.employmentnews.gov.in/" target="_blank">employmentnews.gov.in</a></li>
+                                    </ul>
+                                </div>
+                                <div class="category-card">
+                                    <h2>Work From Home</h2>
+                                    <ul style="margin:0; padding:0 0 0 18px; text-align:left;">
+                                        <li><a href="https://www.freelancer.com/" target="_blank">freelancer.com</a></li>
+                                        <li><a href="https://www.upwork.com/" target="_blank">upwork.com</a></li>
+                                        <li><a href="https://www.workana.com/" target="_blank">workana.com</a></li>
+                                    </ul>
+                                </div>
+                                <div class="category-card">
+                                    <h2>Social Networking</h2>
+                                    <ul style="margin:0; padding:0 0 0 18px; text-align:left;">
+                                        <li><a href="https://in.linkedin.com/" target="_blank">LinkedIn</a></li>
+                                        <li><a href="https://twitter.com/" target="_blank">Twitter</a></li>
+                                        <li><a href="https://www.facebook.com/" target="_blank">Facebook</a></li>
+                                    </ul>
+                                </div>
+                                <div class="category-card">
+                                    <h2>MOOC / Learning</h2>
+                                    <ul style="margin:0; padding:0 0 0 18px; text-align:left;">
+                                        <li><a href="https://www.coursera.org/" target="_blank">Coursera</a></li>
+                                        <li><a href="https://www.edx.org/" target="_blank">edX</a></li>
+                                        <li><a href="https://www.udacity.com/" target="_blank">Udacity</a></li>
+                                        <li><a href="https://www.khanacademy.org/" target="_blank">Khan Academy</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+                <div style="text-align:center; margin:18px 0;">
+                    <strong>Application Steps:</strong><br>
+                    <a href="../my resume/Shaik Shaffi_2018-4.html" target="_blank">Latest Updated Curriculum Vitae</a> | Cover Letter | Written Test | Personal Interview | Apply Online | Pay Fee Online
+                </div>
+                <table border="1" style="margin: 18px auto;">
+                    <tr>
+                        <th>SEARCH</th>
+                        <th>IN NUMBERS</th>
+                    </tr>
+                    <tr>
+                        <td>VIEWED MAILS</td>
+                        <td>1000+</td>
+                    </tr>
+                    <tr>
+                        <td>SUITABLE OPPORTUNITIES</td>
+                        <td>50+</td>
+                    </tr>
+                    <tr>
+                        <td>TO APPLY</td>
+                        <td>50+</td>
+                    </tr>
+                    <tr>
+                        <td>CALL FROM COMPANY</td>
+                        <td>1</td>
+                    </tr>
+                </table>
+                <table border="1" style="margin: 18px auto;">
+                    <tr>
+                        <th>Website</th>
+                        <th>No. of recruiters viewed your resume</th>
+                        <th>No. of recruiters contacted you</th>
+                    </tr>
+                    <tr>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                </table>
+                <!-- Footer links -->
+                <div style="text-align:center; margin:24px 0;">
+                    <ul style="list-style:none; display:flex; flex-wrap:wrap; justify-content:center; gap:24px; padding:0;">
+                        <li><a href="../../../Time management/Time.html" target="_blank">TIME</a></li>
+                        <li><a href="../../../maps/maps.html" target="_blank">PLACE</a></li>
+                        <li><a href="../../../financial/financial.html" target="_blank">FINANCIAL</a></li>
+                        <li><a href="../network/networking.html" target="_blank">Social Networking</a></li>
+                        <li><a href="../ONLINE COURSES/OnlineCourses.html" target="_blank">Courses</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Freelance Page Tab -->
+        <div class="tab-content" id="freelance">
+            <h2>Freelancing & Portfolio Links</h2>
+            <div class="section-title">My Websites</div>
+            <div class="button-list" style="display:flex; flex-direction:column; gap:1.2rem; width:100%; max-width:500px; margin:0 auto;">
+                <a class="btn-link" href="https://shaffishaiksspace.quora.com/" target="_blank">
+                    Quora Space
+                    <span class="btn-url">shaffishaiksspace.quora.com</span>
+                </a>
+                <a class="btn-link" href="https://informshaffi.wixsite.com/the-computer-teacher" target="_blank">
+                    The Computer Teacher (Wix)
+                    <span class="btn-url">informshaffi.wixsite.com/the-computer-teacher</span>
+                </a>
+            </div>
+            <div class="section-title">Freelancing Platforms</div>
+            <div class="button-list" style="display:flex; flex-direction:column; gap:1.2rem; width:100%; max-width:500px; margin:0 auto;">
+                <a class="btn-link" href="https://www.fiverr.com/" target="_blank">Fiverr <span class="btn-url">fiverr.com</span></a>
+                <a class="btn-link" href="https://www.freelancer.com/" target="_blank">Freelancer <span class="btn-url">freelancer.com</span></a>
+                <a class="btn-link" href="https://www.guru.com/" target="_blank">Guru <span class="btn-url">guru.com</span></a>
+                <a class="btn-link" href="https://feehour.com/" target="_blank">Feehour <span class="btn-url">feehour.com</span></a>
+                <a class="btn-link" href="https://meesho.com/" target="_blank">Meesho <span class="btn-url">meesho.com</span></a>
+                <a class="btn-link" href="https://www.workana.com/" target="_blank">Workana <span class="btn-url">workana.com</span></a>
+                <a class="btn-link" href="http://www.skillconnect.com/" target="_blank">SkillConnect <span class="btn-url">skillconnect.com</span></a>
+            </div>
+            <div class="section-title">Portfolio & Social</div>
+            <div class="button-list" style="display:flex; flex-direction:column; gap:1.2rem; width:100%; max-width:500px; margin:0 auto;">
+                <a class="btn-link" href="https://github.com/shaffi786/self-org" target="_blank">GitHub Portfolio <span class="btn-url">github.com/shaffi786/self-org</span></a>
+                <a class="btn-link" href="https://www.blogger.com/" target="_blank">Blogger <span class="btn-url">blogger.com</span></a>
+            </div>
+            <div class="section-title">Web Tools</div>
+            <div class="button-list" style="display:flex; flex-direction:column; gap:1.2rem; width:100%; max-width:500px; margin:0 auto;">
+                <a class="btn-link" href="http://www.wix.com/" target="_blank">Wix <span class="btn-url">wix.com</span></a>
+                <a class="btn-link" href="http://www.wordpress.com/" target="_blank">WordPress <span class="btn-url">wordpress.com</span></a>
+                <a class="btn-link" href="https://account.godaddy.com/products" target="_blank">GoDaddy <span class="btn-url">godaddy.com</span></a>
+                <a class="btn-link" href="http://www.paypal.com/" target="_blank">PayPal <span class="btn-url">paypal.com</span></a>
+                <a class="btn-link" href="https://myadcenter.google.com/home" target="_blank">Google Ads Center <span class="btn-url">myadcenter.google.com</span></a>
+            </div>
+            <div class="section-title">More</div>
+            <div class="button-list" style="display:flex; flex-direction:column; gap:1.2rem; width:100%; max-width:500px; margin:0 auto;">
+                <a class="btn-link" href="anotherpage.html">Go to Another Page</a>
+            </div>
+        </div>
+
+        <!-- Bookmarks Tab -->
+        <div class="tab-content" id="bookmarks">
+            <h2>Bookmarks</h2>
+            <div class="bookmarks-html">
+                <!-- For demonstration: sample bookmarks. To show all, parse and render each bookmark as a list item. -->
+                <ul class="bookmark-list">
+                    <li><a href="https://learn.microsoft.com/en-gb/training/paths/data-analytics-microsoft/" target="_blank">Microsoft Data Analytics Path</a></li>
+                    <li><a href="https://www.duolingo.com/learn" target="_blank">Duolingo</a></li>
+                    <li><a href="https://www.datacamp.com/datalab/w/18e0bca4-2a86-4a7b-9672-ae8bae42b1d4/chat" target="_blank">Datacamp Datalab</a></li>
+                    <li><a href="https://www.shine.com/" target="_blank">Shine.com</a></li>
+                    <li><a href="https://in.indeed.com/" target="_blank">Indeed</a></li>
+                    <li><a href="https://www.naukri.com/" target="_blank">Naukri.com</a></li>
+                    <li><a href="https://apna.co/" target="_blank">Apna.co</a></li>
+                    <li><a href="https://www.jobhai.com/hire/recruiter-login" target="_blank">Jobhai</a></li>
+                    <li><a href="https://www.linkedin.com/feed/" target="_blank">LinkedIn Feed</a></li>
+                    <li><a href="https://web.whatsapp.com/" target="_blank">WhatsApp Web</a></li>
+                    <li><a href="https://www.expertrons.com/app/search?expertType=company&amp;value=Wipro&amp;SourceCampaign=website&amp;SourceMedium=header" target="_blank">Expertrons - Wipro</a></li>
+                    <li><a href="https://www.shine.com/" target="_blank">Shine.com</a></li>
+                    <li><a href="https://www.naukri.com/blog/tag/interview-advice/" target="_blank">Naukri Interview Prep</a></li>
+                    <li><a href="https://www.linkedin.com/learning/" target="_blank">LinkedIn Learning</a></li>
+                    <!-- Add more bookmarks from the file as needed -->
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script>
+        function showTab(tabId) {
+            document.querySelectorAll('.tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            document.querySelectorAll('.tab-content').forEach(content => {
+                content.classList.remove('active');
+            });
+            document.getElementById(tabId).classList.add('active');
+            let tabs = document.querySelectorAll('.tab');
+            if(tabId === 'jobsearch') tabs[0].classList.add('active');
+            else if(tabId === 'privatejobs') tabs[1].classList.add('active');
+            else if(tabId === 'freelance') tabs[2].classList.add('active');
+            else if(tabId === 'bookmarks') tabs[3].classList.add('active');
+        }
+    </script>
+</body>
+</html>
